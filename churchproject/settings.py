@@ -76,10 +76,20 @@ WSGI_APPLICATION = 'churchproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# import dj_database_url
+# from decouple import config
+
+DATABASE_URL = os.environ.get('postgresql://postgres:urSBGXahZZDzNyOeuKq4@containers-us-west-95.railway.app:6881/railway')
+
 DATABASES = {
+    
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',  # Replace with your actual database name
+        'USER': 'postgres',  # Replace with your PostgreSQL username
+        'PASSWORD': 'urSBGXahZZDzNyOeuKq4',  # Replace with your PostgreSQL password
+        'HOST': 'containers-us-west-95.railway.app',  # Replace with your PostgreSQL host
+        'PORT': '6881',  # Replace with your PostgreSQL port
     }
 }
 
