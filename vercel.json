@@ -12,6 +12,13 @@
         "config": {
           "distDir": "staticfiles_build"
         }
+      },
+      {
+        "source": "/feedback/((?!general).*)",
+        "destination": "/api/feedback/general"
+      },
+      {
+        "buildCommand": "next build"
       }
     ],
     "routes": [
@@ -22,13 +29,6 @@
       {
         "src": "/(.*)",
         "dest": "churchproject/wsgi.py"
-      },
-      {
-        "source": "/feedback/((?!general).*)",
-        "destination": "/api/feedback/general"
-      },
-      {
-        "buildCommand": "next build"
       }
     ]
   }
