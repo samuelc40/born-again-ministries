@@ -1,16 +1,12 @@
 {
-    "version": 2,
-    "builds": [
+  "version": 2,
+  "builds": [
     { "src": "churchproject/wsgi.py", "use": "@vercel/python" }
-    ],
-    "routes": [
-      {
-        "src": "/static/(.*)",
-        "dest": "/static/$1"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "churchproject/wsgi.py"
-      }
-    ]
-  }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "churchproject/wsgi.py"
+    }
+  ]
+}
